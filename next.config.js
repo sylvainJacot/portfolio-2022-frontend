@@ -9,7 +9,12 @@ module.exports = {
   },
   env: {
     NEXT_PUBLIC_STRAPI_URL: process.env.NEXT_PUBLIC_STRAPI_URL,
-  }
+  },  
+  compiler: {
+    // ssr and displayName are configured by default
+    styledComponents: true,
+  },
+  
 }
 
 module.exports = nextConfig

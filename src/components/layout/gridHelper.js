@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled from "styled-components"
 import { gridColCount, gridColSizes } from './Grid';
 import media from './Mediaqueries';
 
@@ -24,6 +24,10 @@ const GridHelperWrapper = styled.div`
     ${media.desktop} {
         width: calc(${gridColSizes.desktop} * ${gridColCount.desktop}) ;
         grid-template-columns: repeat(${gridColCount.desktop}, ${gridColSizes.desktop});
+    }
+    ${media.max} {
+        width: calc(${gridColSizes.max} * ${gridColCount.desktop}) ;
+        grid-template-columns: repeat(${gridColCount.desktop}, ${gridColSizes.max});
     }
 
 `

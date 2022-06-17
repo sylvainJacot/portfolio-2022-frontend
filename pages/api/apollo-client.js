@@ -1,3 +1,4 @@
+// Found on https://www.apollographql.com/blog/apollo-client/next-js/next-js-getting-started/
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 

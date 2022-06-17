@@ -2,7 +2,8 @@ export const size = {
     mobile: "320px",
     tablet: "768px",
     laptop: "1024px",
-    desktop: "1440px"
+    desktop: "1440px",
+    max: "1800px",
   };
   
   export const media = {
@@ -10,6 +11,7 @@ export const size = {
     tablet: `@media (min-width: ${size.tablet})`,
     laptop: `@media (min-width: ${size.laptop})`,
     desktop: `@media (min-width: ${size.desktop})`,
+    max: `@media (min-width: ${size.max})`,
   }
   
   export default media;

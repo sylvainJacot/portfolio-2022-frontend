@@ -1,26 +1,27 @@
 import styled from "styled-components"
-import { Children } from 'react';
 import media from './Mediaqueries';
 
 export const gridColCount = {
     mobile : 11,
     tablet : 17, 
     laptop : 23, 
-    desktop : 23 
+    desktop : 23,
 }
 
 export const gridColSizes = {
     mobile : 90 / gridColCount.mobile + 'vw',
     tablet : 90 / gridColCount.tablet + 'vw', 
     laptop : 95 / gridColCount.laptop + 'vw', 
-    desktop : 95 / gridColCount.desktop + 'vw' 
+    desktop : 95 / gridColCount.desktop + 'vw',
+    max : '8rem'
 }
 
 export const gridSizes = {
     mobile : gridColCount.mobile * gridColSizes.mobile + 'vw',
     tablet : gridColCount.tablet * gridColSizes.tablet + 'vw', 
     laptop : gridColCount.laptop * gridColSizes.laptop + 'vw', 
-    desktop : gridColCount.desktop * gridColSizes.desktop + 'vw' 
+    desktop : gridColCount.desktop * gridColSizes.desktop + 'vw',
+    max : gridColCount.desktop * gridColSizes.max,
 }
 
 export const GridWrapper = styled.div`
@@ -36,6 +37,9 @@ export const GridWrapper = styled.div`
     ${media.desktop} {
         width: calc(${gridColSizes.desktop} * ${gridColCount.desktop}) ;
     }
+    ${media.max} {
+        width: calc(${gridColSizes.max} * ${gridColCount.desktop}) ;
+    }
 `
 
 export default function Grid(props) {
@@ -43,7 +47,7 @@ export default function Grid(props) {
     return (
     
        <>
-            <GridWrapper>{props.Children}</GridWrapper>
+            <GridWrapper>{props.children}</GridWrapper>
        </>
     )
 }
