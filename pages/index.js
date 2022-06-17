@@ -8,34 +8,33 @@ import { useEffect, useState } from "react";
 import LoaderIntro from "../src/components/loader/Loader";
 import { lightTheme, darkTheme } from "../src/components/layout/Themes";
 import { ThemeProvider } from "styled-components";
-import ThemeToggler from '../src/components/buttons/ThemeToggler';
-import { useDarkMode } from '../src/hooks/useDarkMode';
+import ThemeToggler from "../src/components/buttons/ThemeToggler";
+import { useDarkMode } from "../src/hooks/useDarkMode";
+import Dashboard from "../src/components/dashboard/Dashboard";
 
 export default function Home({ projectsQuery, introQuery }) {
-
   const [theme, themeToggler] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   return (
     <>
-    <ThemeProvider theme={themeMode}>
-      <GlobalStyle />
-      <GridHelper />
-      <Head>
-        <title>Portfolio 2022</title>
-        <meta
-          name="description"
-          content="Portfolio Jacot Sylvain Frontend developer"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <ThemeToggler toggleTheme={themeToggler}/>
-      <LoaderIntro introQuery={introQuery}/>
-      {/* <Projects projectsQuery={projectsQuery}/> */}
+      <ThemeProvider theme={themeMode}>
+        <GlobalStyle />
+        <GridHelper />
+        <Head>
+          <title>Portfolio 2022</title>
+          <meta
+            name="description"
+            content="Portfolio Jacot Sylvain Frontend developer"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <ThemeToggler toggleTheme={themeToggler} />
+        {/* <LoaderIntro introQuery={introQuery}/> */}
+        {/* <Projects projectsQuery={projectsQuery}/> */}
+        <Dashboard />
       </ThemeProvider>
     </>
-  
   );
 }
 
