@@ -10,9 +10,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
    }
   body {
-    background-color: white;
-    ${'' /* color: ${colors.White}; */}
+    background-color: ${({theme}) => theme.body};
+    color: ${({theme}) => theme.text};
     position: relative;
+    transition: all 0.50s linear;
 
     ${'' /* &:after {
       display: block;
