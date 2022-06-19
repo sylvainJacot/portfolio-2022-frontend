@@ -12,7 +12,9 @@ import ThemeToggler from "../src/components/buttons/ThemeToggler";
 import { useDarkMode } from "../src/hooks/useDarkMode";
 import Dashboard from "../src/components/dashboard/Dashboard";
 
-export default function Home({ projectsQuery, introQuery }) {
+export default function Home({ dashboardQuery, projectsQuery, introQuery }) {
+  console.log(dashboardQuery);
+
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
@@ -30,9 +32,12 @@ export default function Home({ projectsQuery, introQuery }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <ThemeToggler toggleTheme={themeToggler} />
-        {/* <LoaderIntro introQuery={introQuery}/> */}
-        {/* <Projects projectsQuery={projectsQuery}/> */}
-        <Dashboard />
+        <LoaderIntro introQuery={introQuery} />
+        <Projects projectsQuery={projectsQuery} />
+        <Dashboard
+          mainTitle={dashboardQuery.MainTitle}
+          mainDescription={dashboardQuery.MainDescription}
+        />
       </ThemeProvider>
     </>
   );
@@ -83,10 +88,26 @@ export async function getStaticProps() {
     `,
   });
 
+  const { data: dataDashboard } = await client.query({
+    query: gql`
+      query getDashboard {
+        dashboard {
+          data {
+            attributes {
+              MainTitle
+              MainDescription
+            }
+          }
+        }
+      }
+    `,
+  });
+
   return {
     props: {
       projectsQuery: data.projects.data,
       introQuery: dataIntro.introduction.data.attributes.WordIntro,
+      dashboardQuery: dataDashboard.dashboard.data.attributes,
     },
   };
 }

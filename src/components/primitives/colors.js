@@ -1,9 +1,9 @@
 const palette = {
-        EbonyClay : "#243042",
-        RoseWhite : "#FFFEFE"
-}
+  FireFly: "#0D192B",
+  RoseWhite: "#FFFEFE",
+};
 
 export const colors = {
-    Primary : palette.EbonyClay,
-    White : palette.RoseWhite
-}
+  Primary: palette.FireFly,
+  White: palette.RoseWhite,
+};
