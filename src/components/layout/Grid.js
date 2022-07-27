@@ -29,7 +29,7 @@ export const gridMargins = {
   tablet: `calc((100vw - (${gridColCount.tablet} * ${gridColSizes.tablet})) / 2 )`,
   laptop: `calc((100vw - (${gridColCount.laptop} * ${gridColSizes.laptop})) / 2 )`,
   desktop: `calc((100vw - (${gridColCount.desktop} * ${gridColSizes.desktop})) / 2 )`,
-  max: `calc((100vw - (${gridColCount.max} * ${gridColSizes.max})) / 2 )`,
+  max: `calc((100vw - (${gridColCount.desktop} * ${gridColSizes.max})) /  2 )`,
 };
 
 export const GridWrapper = styled.div`

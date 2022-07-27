@@ -1,9 +1,8 @@
-const palette = {
-  FireFly: "#0D192B",
-  RoseWhite: "#FFFEFE",
-};
-
 export const colors = {
-  Primary: palette.FireFly,
-  White: palette.RoseWhite,
+  Primary: "#0D192B",
+  Secondary: "#1F38C5",
+  Tertiary: "#F2F3FC",
+  White: "#FFFFFF",
+
+  Aqua: "#6AC8C9",
 };
