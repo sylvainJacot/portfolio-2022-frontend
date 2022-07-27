@@ -37,7 +37,7 @@ export default function Dashboard(props) {
               Socials={props.Socials}
               ref={props.Features}
               socialsState={props.socialsState}
-              dateTimeState={props.dateTimeState}
+              datetimestate={props.datetimestate}
               apiState={props.apiState}
               mapState={props.mapState}
             />

@@ -12,7 +12,7 @@ const Features = (props, FeaturesRef) => (
     <FeaturesWrapper ref={FeaturesRef} FeatureState={props.FeatureState}>
       <MiniMap mapState={props.mapState} />
       <RandomApi fact={props.fact} apiState={props.apiState} />
-      <Datetime dateTimeState={props.dateTimeState} />
+      <Datetime datetimestate={props.datetimestate} />
       <Socials Socials={props.Socials} socialsState={props.socialsState} />
     </FeaturesWrapper>
   </>

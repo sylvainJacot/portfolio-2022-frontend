@@ -8,7 +8,7 @@ export default function LoaderDashboard(props) {
   const Features = useRef();
 
   const [socialsState, setSocialsState] = useState(false);
-  const [dateTimeState, setDateTimeState] = useState(false);
+  const [datetimestate, setdatetimestate] = useState(false);
   const [apiState, setApiState] = useState(false);
   const [mapState, setMapState] = useState(false);
 
@@ -45,7 +45,7 @@ export default function LoaderDashboard(props) {
       .to(
         Features.current,
         {
-          onEnter: () => setDateTimeState(true),
+          onEnter: () => setdatetimestate(true),
         },
         "-=0.2"
       )
@@ -89,7 +89,7 @@ export default function LoaderDashboard(props) {
         Socials={props.Socials}
         Features={Features}
         socialsState={socialsState}
-        dateTimeState={dateTimeState}
+        datetimestate={datetimestate}
         apiState={apiState}
         mapState={mapState}
       />

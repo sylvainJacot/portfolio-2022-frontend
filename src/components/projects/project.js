@@ -1,18 +1,12 @@
 import styled from "styled-components";
 import { gridColSizes, GridWrapper } from "../layout/Grid";
-import React, {
-  forwardRef,
-  useEffect,
-  useRef,
-  useContext,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import {
   ParagraphBigStyle,
   ParagraphStyle,
   ProjectTitleStyle,
 } from "../primitives/typography";
-import { imgCover, imgCoverParallax } from "../../lib/functions/imgCover";
+import { imgCoverParallax } from "../../lib/functions/imgCover";
 import media from "../layout/Mediaqueries";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import { colors } from "../primitives/colors";
@@ -21,8 +15,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { borderRadiusfeatures } from "../layout/CommonValue";
 import { MouseContext } from "../../context/mouse-context";
 import { BodyContext } from "../../context/body-context";
-import Link from "next/link";
-import SplitText from "gsap/dist/SplitText";
 import useSound from "use-sound";
 import { OverallSoundContext } from "../../context/sound-context";
 
@@ -209,7 +201,12 @@ const Project = (props) => {
             <Title ref={addToTitleRef}>{title}</Title>
             <SubTitle ref={addToSubTitleRef}>{baseline}</SubTitle>
           </TextHeader>
-          <a href={url} target="_blank" onClick={onClickProjectItemHanlder}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            onClick={onClickProjectItemHanlder}
+          >
             <PictureWrapper
               ref={addToPicRef}
               onMouseEnter={onEnterProjectHanlder}

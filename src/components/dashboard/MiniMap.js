@@ -76,4 +76,6 @@ const Map = styled.div`
   }
 `;
 
+MiniMap.displayName = "MiniMap";
+
 export default MiniMap;

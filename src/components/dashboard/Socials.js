@@ -66,6 +66,7 @@ export default function Socials(props) {
             onClick={onClickSocialItemHanlder}
             href={props.Socials.LinkedinUrl}
             target="_blank"
+            rel="noreferrer"
           >
             {" "}
             <SocialIcon>
