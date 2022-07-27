@@ -10,11 +10,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
-    "@gsap/shockingly": "git+https://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:x-oauth-basic@github.com/sylvainJacot/portfolio-2022-frontend.git",
     "@react-google-maps/api": "^2.12.0",
     "axios": "^0.27.2",
     "graphql": "^16.3.0",
-    "gsap": "file:gsap-bonus.tgz",
+    "gsap": "npm:@gsap/shockingly@^3.10.4",
     "mailgo": "^0.12.2",
     "next": "12.1.4",
     "next-i18next": "^11.0.0",
