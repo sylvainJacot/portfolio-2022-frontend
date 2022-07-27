@@ -13,7 +13,7 @@
     "@react-google-maps/api": "^2.12.0",
     "axios": "^0.27.2",
     "graphql": "^16.3.0",
-    "gsap": "npm:@gsap/shockingly@^3.10.4",
+    "gsap": "git+https://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:x-oauth-basic@github.com/sylvainJacot/portfolio-2022-frontend.git",
     "mailgo": "^0.12.2",
     "next": "12.1.4",
     "next-i18next": "^11.0.0",
