@@ -2,9 +2,7 @@ import Head from "next/head";
 import GlobalStyle from "../src/components/layout/GlobalStyle";
 import GridHelper from "../src/components/layout/gridHelper";
 import Projects from "../src/components/sections/Projects";
-import client from "./api/apollo-client";
-import { useEffect, useState, useRef, useMemo, createRef } from "react";
-import LoaderIntro from "../src/components/loader/Loader";
+import { useEffect, useState } from "react";
 import { lightTheme, darkTheme } from "../src/components/layout/Themes";
 import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "../src/hooks/useDarkMode";
@@ -30,8 +28,6 @@ export default function Home({
   projectsQuery,
   loaderQuery,
   factQuery,
-  SkillsQuery,
-  Skills,
 }) {
   const [theme, themeToggler] = useDarkMode();
   const [active, setActive] = useState(true);
@@ -47,9 +43,9 @@ export default function Home({
     playSoundSwitch();
   };
 
-  useEffect(() => {
-    console.clear();
-  }, []);
+  // useEffect(() => {
+  //   console.clear();
+  // }, []);
 
   return (
     <>

@@ -19,11 +19,11 @@ export default function Datetime(props) {
 
   return (
     <>
-      <DatetimeWrapper datetimestate={props.datetimestate}>
-        <DateItem datetimestate={props.datetimestate} format="ddd, MMMM Do YY">
+      <DatetimeWrapper $datetimestate={props.datetimestate}>
+        <DateItem $datetimestate={props.datetimestate} format="ddd, MMMM Do YY">
           {getDate}
         </DateItem>
-        <Time datetimestate={props.datetimestate} format="HH:mm">
+        <Time $datetimestate={props.datetimestate} format="HH:mm">
           {time}
         </Time>
       </DatetimeWrapper>
@@ -40,9 +40,9 @@ const DatetimeWrapper = styled.div`
   padding: ${pxToRem(16)};
   background-color: ${({ theme }) => theme.BlockBackground};
   border-radius: ${borderRadiusfeatures};
-  opacity: ${(props) => (props.datetimestate ? 1 : 0)};
+  opacity: ${(props) => (props.$datetimestate ? 1 : 0)};
   transform-origin: center right;
-  transform: ${(props) => (props.datetimestate ? "scalex(1)" : "scalex(0)")};
+  transform: ${(props) => (props.$datetimestate ? "scalex(1)" : "scalex(0)")};
   transition: all ${transitionDefault};
 `;
 
@@ -50,7 +50,7 @@ const DateItem = styled(Moment)`
   ${InterTitleStyle}
   color: ${({ theme }) => theme.TextNeg};
   clip-path: ${(props) =>
-    props.datetimestate
+    props.$datetimestate
       ? "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
       : "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);"};
   transition: all ${transitionDefault};
@@ -62,7 +62,7 @@ const Time = styled(Moment)`
   ${InterTitleStyle}
   color: ${({ theme }) => theme.TextNeg};
   clip-path: ${(props) =>
-    props.datetimestate
+    props.$datetimestate
       ? "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
       : "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);"};
   transition: all ${transitionDefault};

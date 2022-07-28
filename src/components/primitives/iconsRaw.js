@@ -1,6 +1,6 @@
 export const IcSound = (props) => (
   <svg
-    state={props.state}
+    $state={props.state}
     width="24"
     height="18"
     viewBox="0 0 24 18"

@@ -23,12 +23,9 @@ export default function Skills(props) {
           <MainSkill>
             <IcReact />
           </MainSkill>
-
           {props.Skills &&
-            props.Skills.map((item, index) => (
-              <>
-                <SoftSkill key={index}>{item.SkillName}</SoftSkill>
-              </>
+            props.Skills.map((item) => (
+              <SoftSkill key={item.id}>{item.SkillName}</SoftSkill>
             ))}
         </SkillsWrapper>
       </GridExtended>

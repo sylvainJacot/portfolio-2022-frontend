@@ -17,7 +17,7 @@ export default function SoundIcon() {
   return (
     <>
       <IcSoundWrapper
-        state={soundState}
+        $state={soundState}
         type="button"
         aria-label="Disable sounds"
         title="Disable sounds"
@@ -27,7 +27,7 @@ export default function SoundIcon() {
           overallSoundChangeHandler(!overallSound);
         }}
       >
-        <IcSound state={soundState} />
+        <IcSound $state={soundState} />
       </IcSoundWrapper>
     </>
   );
@@ -40,22 +40,22 @@ const IcSoundWrapper = styled.button`
     #speaker {
       fill: ${({ theme }) => theme.text};
       transform: ${(props) =>
-        props.state ? "translatex(4px)" : "translatex(0)"};
-      opacity: ${(props) => (props.state ? "0.5" : "1")};
+        props.$state ? "translatex(4px)" : "translatex(0)"};
+      opacity: ${(props) => (props.$state ? "0.5" : "1")};
       transition: ${(props) =>
-        props.state ? "all 0.2s ease-out" : "all 0.1s ease-out"};
+        props.$state ? "all 0.2s ease-out" : "all 0.1s ease-out"};
     }
     #wave-1 {
       fill: ${({ theme }) => theme.text};
-      opacity: ${(props) => (props.state ? "0" : "1")};
+      opacity: ${(props) => (props.$state ? "0" : "1")};
       transition: ${(props) =>
-        props.state ? "opacity 0.2s ease-out 0.1s" : "opacity 0.1s ease-out"};
+        props.$state ? "opacity 0.2s ease-out 0.1s" : "opacity 0.1s ease-out"};
     }
     #wave-2 {
       fill: ${({ theme }) => theme.text};
-      opacity: ${(props) => (props.state ? "0" : "1")};
+      opacity: ${(props) => (props.$state ? "0" : "1")};
       transition: ${(props) =>
-        props.state ? "opacity 0.2s ease-out" : "opacity 0.1s ease-out 0.1s"};
+        props.$state ? "opacity 0.2s ease-out" : "opacity 0.1s ease-out 0.1s"};
     }
   }
 `;

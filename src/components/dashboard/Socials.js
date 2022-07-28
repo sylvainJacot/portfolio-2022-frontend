@@ -123,7 +123,6 @@ export default function Socials(props) {
 }
 
 const SocialsWrapper = styled.ul`
-  /* background-color: ${({ theme }) => theme.BlockBackground}; */
   position: relative;
   grid-area: social;
   align-self: flex-start;
