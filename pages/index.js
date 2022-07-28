@@ -76,20 +76,20 @@ export default function Home({
               rel="stylesheet"
             />
           </Head>
-          <SmoothScroller>
-            <ScrollUpTarget />
-            <LoaderDashboard
-              loaderQuery={loaderQuery.Words}
-              mainTitle={dashboardQuery.MainTitle}
-              mainDescription={dashboardQuery.MainDescription}
-              fact={factQuery}
-              Socials={dashboardQuery.Social}
-            />
-            <ScrollDownTarget />
-            <SkillsSection Skills={dashboardQuery.Skills} />
-            <Projects projectsQuery={projectsQuery} />
-            <Footer />
-          </SmoothScroller>
+          {/* <SmoothScroller> */}
+          <ScrollUpTarget />
+          <LoaderDashboard
+            loaderQuery={loaderQuery.Words}
+            mainTitle={dashboardQuery.MainTitle}
+            mainDescription={dashboardQuery.MainDescription}
+            fact={factQuery}
+            Socials={dashboardQuery.Social}
+          />
+          <ScrollDownTarget />
+          <SkillsSection Skills={dashboardQuery.Skills} />
+          <Projects projectsQuery={projectsQuery} />
+          <Footer />
+          {/* </SmoothScroller> */}
           <Cursor />
           <IconsBoard toggleTheme={toggleTheme} active={active} />
           <BackgroundOverlay />
