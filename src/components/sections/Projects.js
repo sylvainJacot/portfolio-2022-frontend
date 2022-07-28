@@ -1,4 +1,4 @@
-import Project from "../projects/Project.js";
+import Project from "../../components/projects/Project";
 
 export default function Projects(props) {
   return (

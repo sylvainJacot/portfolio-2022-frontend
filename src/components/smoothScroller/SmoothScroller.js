@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
+// import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import styled from "styled-components";
 import { useEffect } from "react";
 import ScrollDown from "../scrollDown/ScrollDown";
