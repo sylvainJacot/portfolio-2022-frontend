@@ -97,18 +97,6 @@ export async function getStaticProps() {
   const resFact = await fetch("https://catfact.ninja/fact");
   const dataFact = await resFact.json();
 
-  // DASHBOARD
-  // const resDashboard = await fetch(
-  //   `${process.env.NEXT_PUBLIC_STRAPI_URL_API}/dashboard`
-  // );
-  // const dataDashboard = await resDashboard.json();
-
-  // LOADER
-  const resLoader = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL_API}/loader`
-  );
-  const dataLoader = await resLoader.json();
-
   return {
     props: {
       factQuery: dataFact.fact,
