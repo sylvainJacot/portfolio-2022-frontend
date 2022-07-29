@@ -16,16 +16,15 @@ import useSound from "use-sound";
 import { OverallContext } from "../src/context/overallContext";
 import Footer from "../src/components/sections/Footer";
 import ScrollUpTarget from "../src/components/scrollUp/ScrollUpTarget";
-
+import { dashboardData } from "../src/data/dashboard-data";
+import { projectsData } from "../src/data/data-projects";
 const switchOn = "./sounds/switch-on.mp3";
 const switchOff = "./sounds/switch-off.mp3";
 
-export default function Home({
-  dashboardQuery,
-  projectsQuery,
-  loaderQuery,
-  factQuery,
-}) {
+export default function Home({ loaderQuery, factQuery }) {
+  const dashboardQuery = dashboardData.data.attributes;
+  const projectsQuery = projectsData.data;
+
   const [theme, themeToggler] = useDarkMode();
   const [active, setActive] = useState(true);
   const themeMode = theme === "light" ? lightTheme : darkTheme;
@@ -75,7 +74,6 @@ export default function Home({
           </Head>
           <ScrollUpTarget />
           <LoaderDashboard
-            loaderQuery={loaderQuery.Words}
             mainTitle={dashboardQuery.MainTitle}
             mainDescription={dashboardQuery.MainDescription}
             fact={factQuery}
@@ -100,10 +98,10 @@ export async function getStaticProps() {
   const dataFact = await resFact.json();
 
   // DASHBOARD
-  const resDashboard = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL_API}/dashboard`
-  );
-  const dataDashboard = await resDashboard.json();
+  // const resDashboard = await fetch(
+  //   `${process.env.NEXT_PUBLIC_STRAPI_URL_API}/dashboard`
+  // );
+  // const dataDashboard = await resDashboard.json();
 
   // LOADER
   const resLoader = await fetch(
@@ -111,18 +109,8 @@ export async function getStaticProps() {
   );
   const dataLoader = await resLoader.json();
 
-  // PROJECTS
-
-  const resProjects = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL_API}/projects?populate=deep`
-  );
-  const dataProjects = await resProjects.json();
-
   return {
     props: {
-      projectsQuery: dataProjects.data,
-      loaderQuery: dataLoader.data.attributes,
-      dashboardQuery: dataDashboard.data.attributes,
       factQuery: dataFact.fact,
     },
   };
