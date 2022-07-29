@@ -2,19 +2,16 @@ import Head from "next/head";
 import GlobalStyle from "../src/components/layout/GlobalStyle";
 import GridHelper from "../src/components/layout/gridHelper";
 import Projects from "../src/components/sections/Projects";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { lightTheme, darkTheme } from "../src/components/layout/Themes";
 import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "../src/hooks/useDarkMode";
-import Dashboard from "../src/components/dashboard/Dashboard";
 import IconsBoard from "../src/components/dashboard/IconsBoard";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LoaderDashboard from "../src/components/sections/LoaderDashboard";
 import SkillsSection from "../src/components/sections/Skills";
 import ScrollDownTarget from "../src/components/scrollDown/ScrollDownTarget";
 import Cursor from "../src/components/cursor/Cursor";
 import BackgroundOverlay from "../src/components/layout/BackgroundOverlay";
-import SmoothScroller from "../src/components/smoothScroller/SmoothScroller";
 import useSound from "use-sound";
 import { OverallContext } from "../src/context/overallContext";
 import Footer from "../src/components/sections/Footer";
@@ -129,7 +126,6 @@ export async function getStaticProps({ locale }) {
       loaderQuery: dataLoader.data.attributes,
       dashboardQuery: dataDashboard.data.attributes,
       factQuery: dataFact.fact,
-      ...(await serverSideTranslations(locale, ["common", "footer"])),
     },
   };
 }
