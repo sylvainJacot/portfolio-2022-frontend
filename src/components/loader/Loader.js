@@ -1,14 +1,9 @@
-import { useRef, useState, forwardRef } from "react";
-import gsap, { Power2 } from "gsap";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import styled from "styled-components";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import { colors } from "../primitives/colors";
-import { useEffect } from "react";
-import { useDarkMode } from "../../hooks/useDarkMode";
-
-import { useSpring, animated } from "react-spring";
 import { Heading01Style } from "../primitives/typography";
 
 gsap.registerPlugin(ScrollTrigger);

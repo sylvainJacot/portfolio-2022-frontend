@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { InterTitleStyle } from "../primitives/typography";
-import { colors } from "../primitives/colors";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import { IcEmail, IcLinkedin, IcWhatsapp } from "../primitives/iconsRaw";
 import { borderRadiusfeatures } from "../layout/CommonValue";
@@ -17,8 +15,8 @@ import avatar02 from "../../../public/img/avatar-02.png";
 import avatar03 from "../../../public/img/avatar-03.png";
 import avatar04 from "../../../public/img/avatar-04.png";
 
-const soundUrl = "/sounds/pop01.mp3";
-const soundClickUrl = "/sounds/click.mp3";
+const soundUrl = "./sounds/pop01.mp3";
+const soundClickUrl = "./sounds/click.mp3";
 
 export default function Socials(props) {
   const { overallSound, overallSoundChangeHandler } =

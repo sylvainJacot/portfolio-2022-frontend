@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../primitives/colors";
 import { InterTitleStyle, ParagraphStyle } from "../primitives/typography";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import { borderRadiusfeatures } from "../layout/CommonValue";

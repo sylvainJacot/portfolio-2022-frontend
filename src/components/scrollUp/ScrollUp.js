@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import { IcArrow } from "../primitives/iconsRaw";
 import { pxToRem } from "../../lib/functions/pxToRem";
-import { colors } from "../primitives/colors";
-import { gridColSizes, gridMargins } from "../layout/Grid";
 import { InterTitleStyle } from "../primitives/typography";
-import media from "../layout/Mediaqueries";
 import { useState, useContext } from "react";
 import useSound from "use-sound";
 import { OverallSoundContext } from "../../context/sound-context";

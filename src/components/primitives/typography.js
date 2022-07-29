@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import { fontsFamilies } from "../layout/GlobalStyle";
 import media from "../layout/Mediaqueries";

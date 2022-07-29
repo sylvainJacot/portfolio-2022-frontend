@@ -1,16 +1,10 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import { pxToRem } from "../../lib/functions/pxToRem";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import media from "../layout/Mediaqueries";
-import { googleMapStyles } from "../../assets/json/google-map-styles";
-import { colors } from "../primitives/colors";
 import { borderRadiusfeatures } from "../layout/CommonValue";
-import { transitionDefault } from "../animations/transitions";
-import {
-  darkGoogleMap,
-  lightGoogleMap,
-} from "../../lib/styles/googleMapStyles";
+import { lightGoogleMap } from "../../lib/styles/googleMapStyles";
 
 const MiniMap = React.memo((props) => {
   const googlemap = useRef(null);

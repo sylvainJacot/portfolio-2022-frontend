@@ -1,6 +1,5 @@
-import LoaderIntro from "../loader/Loader";
 import { useRef, useEffect, useState } from "react";
-import gsap, { Power2 } from "gsap";
+import gsap from "gsap";
 import Dashboard from "../dashboard/Dashboard";
 
 export default function LoaderDashboard(props) {

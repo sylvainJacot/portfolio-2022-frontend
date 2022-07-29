@@ -1,7 +1,6 @@
 // TUTO FOUND ON : https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/
 import styled, { css, keyframes } from "styled-components";
-import { useSpring, animated, interpolate } from "react-spring";
-import { useState, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
 import { pxToRem } from "../../lib/functions/pxToRem";
 
 export default function ThemeToggler(props) {

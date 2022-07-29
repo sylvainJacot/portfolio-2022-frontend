@@ -2,7 +2,6 @@ import styled from "styled-components";
 import SoundIcon from "../buttons/SoundIcon";
 import ThemeToggler from "../buttons/ThemeToggler";
 import { pxToRem } from "../../lib/functions/pxToRem";
-import { colors } from "../primitives/colors";
 import { gridMargins } from "../layout/Grid";
 import media from "../layout/Mediaqueries";
 import { paddingBodyTop } from "../layout/CommonValue";

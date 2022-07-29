@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { useSound } from "use-sound";
 
 export const OverallSoundContext = createContext({
   overallSound: true,

@@ -2,7 +2,7 @@ import Head from "next/head";
 import GlobalStyle from "../src/components/layout/GlobalStyle";
 import GridHelper from "../src/components/layout/gridHelper";
 import Projects from "../src/components/sections/Projects";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { lightTheme, darkTheme } from "../src/components/layout/Themes";
 import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "../src/hooks/useDarkMode";
@@ -17,8 +17,8 @@ import { OverallContext } from "../src/context/overallContext";
 import Footer from "../src/components/sections/Footer";
 import ScrollUpTarget from "../src/components/scrollUp/ScrollUpTarget";
 
-const switchOn = "/sounds/switch-on.mp3";
-const switchOff = "/sounds/switch-off.mp3";
+const switchOn = "./sounds/switch-on.mp3";
+const switchOff = "./sounds/switch-off.mp3";
 
 export default function Home({
   dashboardQuery,
@@ -40,9 +40,9 @@ export default function Home({
     playSoundSwitch();
   };
 
-  // useEffect(() => {
-  //   console.clear();
-  // }, []);
+  useEffect(() => {
+    console.clear();
+  }, []);
 
   return (
     <>
@@ -73,7 +73,6 @@ export default function Home({
               rel="stylesheet"
             />
           </Head>
-          {/* <SmoothScroller> */}
           <ScrollUpTarget />
           <LoaderDashboard
             loaderQuery={loaderQuery.Words}
@@ -86,7 +85,6 @@ export default function Home({
           <SkillsSection Skills={dashboardQuery.Skills} />
           <Projects projectsQuery={projectsQuery} />
           <Footer />
-          {/* </SmoothScroller> */}
           <Cursor />
           <IconsBoard toggleTheme={toggleTheme} active={active} />
           <BackgroundOverlay />
@@ -97,7 +95,7 @@ export default function Home({
 }
 
 // getStaticProps() ne peut être utilisé QUE sur les pages (index.js, contact.js...)
-export async function getStaticProps({ locale }) {
+export async function getStaticProps() {
   const resFact = await fetch("https://catfact.ninja/fact");
   const dataFact = await resFact.json();
 

@@ -1,12 +1,11 @@
 import { useState, useContext } from "react";
 import styled from "styled-components";
-
 import useSound from "use-sound";
 import { IcSound } from "../primitives/iconsRaw";
 import { OverallSoundContext } from "../../context/sound-context";
 
-const soundOff = "/sounds/soundOn-test.mp3";
-const soundOn = "/sounds/soundOff-tesst.mp3";
+const soundOff = "./sounds/soundOn-test.mp3";
+const soundOn = "./sounds/soundOff-tesst.mp3";
 
 export default function SoundIcon() {
   const { overallSound, overallSoundChangeHandler } =

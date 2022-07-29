@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { IcHtml, IcReact, IcSass } from "../primitives/iconsRaw";
-import { colors } from "../primitives/colors";
-import Grid, { gridColSizes, GridWrapper } from "../layout/Grid";
+import { gridColSizes, GridWrapper } from "../layout/Grid";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import { Heading01Style, InterTitleStyle } from "../primitives/typography";
 import media from "../layout/Mediaqueries";

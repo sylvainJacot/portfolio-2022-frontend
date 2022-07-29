@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../primitives/colors";
 import { gridColSizes, gridMargins } from "./Grid";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import media from "./Mediaqueries";

@@ -1,7 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { colors } from "../primitives/colors";
-import { pxToRem } from "../../lib/functions/pxToRem";
-import { gridColSizes } from "./Grid";
 
 const GlobalStyle = createGlobalStyle`
 

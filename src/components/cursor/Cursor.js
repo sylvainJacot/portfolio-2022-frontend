@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import useMousePosition from "../../hooks/useMousePosition";
 import { colors } from "../primitives/colors";
 import { pxToRem } from "../../lib/functions/pxToRem";
