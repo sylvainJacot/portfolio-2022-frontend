@@ -53,8 +53,18 @@ export default function Dashboard(props) {
 const DashboardContainer = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
   background: ${({ theme }) => theme.background};
+  padding-top: ${pxToRem(88)};
+
+  ${media.tablet} {
+    padding-top: ${pxToRem(120)};
+  }
+
+  ${media.laptop} {
+    padding-top: ${pxToRem(88)};
+    height: 100vh;
+    width: auto;
+  }
 `;
 
 const GridWrapperExtended = styled(GridWrapper)`
@@ -130,7 +140,7 @@ const Avatar = styled.div`
 `;
 
 const AvatarWrapper = styled.div`
-  width: calc(2 * ${gridColSizes.mobile});
+  width: calc(3 * ${gridColSizes.mobile});
   background-color: ${({ theme }) => theme.Text};
   border-radius: 50%;
   aspect-ratio: 1/1;

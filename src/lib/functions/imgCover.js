@@ -21,8 +21,8 @@ export const imgCoverParallax = css`
   align-items: center;
   -webkit-mask-image: -webkit-radial-gradient(white, black); // safari
   > img {
-    width: 110%;
-    height: 110%;
+    width: 1OO%;
+    height: 100%;
     max-width: unset;
     object-fit: cover;
   }

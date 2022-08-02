@@ -4,6 +4,7 @@ import { GridWrapper } from "../layout/Grid";
 import ThankYou from "../footer/thankyou";
 import gsap from "gsap";
 import { useEffect, useState, useRef } from "react";
+import media from "../layout/Mediaqueries";
 
 export default function Footer() {
   const thankYouTextRef = useRef();
@@ -40,4 +41,8 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  ${media.laptop} {
+    text-align: unset;
+  }
 `;

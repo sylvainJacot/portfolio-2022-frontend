@@ -6,7 +6,7 @@ export const BodyContext = createContext({
 });
 
 const BodyContextProvider = (props) => {
-  const [bodyColor, setBodyColor] = useState("");
+  const [bodyColor, setBodyColor] = useState(null);
 
   const bodyColorChangeHandler = (bodyColor) => {
     setBodyColor(bodyColor);

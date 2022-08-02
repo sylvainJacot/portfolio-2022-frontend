@@ -38,6 +38,7 @@ const GridExtended = styled(GridWrapper)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: ${pxToRem(96)};
   ${media.desktop} {
     padding: 0 calc(4 * ${gridColSizes.desktop});
   }
@@ -50,6 +51,10 @@ const SkillTitle = styled.h2`
   ${Heading01Style};
   color: ${({ theme }) => theme.Text};
   margin-bottom: ${pxToRem(80)};
+  margin-top: ${pxToRem(160)};
+  ${media.laptop} {
+    margin-top: unset;
+  }
 `;
 
 const SkillsWrapper = styled.div`
@@ -61,6 +66,7 @@ const SkillsWrapper = styled.div`
   height: 50%;
   margin: 0 auto;
   transition: all ${transitionDefault};
+
   ${media.laptop} {
     height: 50%;
     margin: unset;
@@ -131,6 +137,7 @@ const SoftSkill = styled.p`
   ${InterTitleStyle}
   color: ${({ theme }) => theme.TextStrong};
   transition: all ${transitionDefault};
+  opacity: 0.6;
 
   ${media.laptop} {
     opacity: 0;
@@ -138,41 +145,55 @@ const SoftSkill = styled.p`
 
   &:nth-of-type(1) {
     top: 0;
-    transform: scale(1.4);
+    transform: scale(1.1);
     ${media.laptop} {
       left: 5%;
+      transform: scale(1.4);
     }
   }
 
   &:nth-of-type(2) {
     bottom: 0;
     right: 0;
-    transform: scale(1.3);
+    transform: scale(0.9);
     ${media.laptop} {
       right: 5%;
+      transform: scale(1.3);
     }
   }
 
   &:nth-of-type(3) {
     top: 0;
     right: 0;
-    transform: scale(1.2);
+    transform: scale(0.8);
+    ${media.laptop} {
+      transform: scale(1.2);
+    }
   }
 
   &:nth-of-type(4) {
     bottom: 0;
     left: 5%;
-    transform: scale(1.1);
+    transform: scale(0.7);
+    ${media.laptop} {
+      transform: scale(1.1);
+    }
   }
   &:nth-of-type(5) {
     top: 20%;
     left: 35%;
-    transform: scale(1);
+    transform: scale(0.7);
+    ${media.laptop} {
+      transform: scale(1);
+    }
   }
   &:nth-of-type(6) {
     bottom: 20%;
     right: 35%;
-    transform: scale(0.9);
+    transform: scale(0.7);
+    ${media.laptop} {
+      transform: scale(0.9);
+    }
   }
   &:nth-of-type(7) {
     right: 20%;
@@ -182,17 +203,19 @@ const SoftSkill = styled.p`
   &:nth-of-type(8) {
     right: -5%;
     top: 30%;
-    transform: scale(0.8);
+    transform: scale(0.7);
     ${media.laptop} {
       top: 40%;
+      transform: scale(0.8);
     }
   }
   &:nth-of-type(9) {
     left: -5%;
     bottom: 30%;
-    transform: scale(0.8);
+    transform: scale(0.7);
     ${media.laptop} {
       bottom: 40%;
+      transform: scale(0.8);
     }
   }
 `;

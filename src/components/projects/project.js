@@ -17,6 +17,7 @@ import { MouseContext } from "../../context/mouse-context";
 import { BodyContext } from "../../context/body-context";
 import useSound from "use-sound";
 import { OverallSoundContext } from "../../context/sound-context";
+import Image from "next/image";
 
 const soundUrl = "/sounds/moreProjects.mp3";
 const soundClickUrl = "/sounds/click.mp3";
@@ -189,6 +190,10 @@ const Project = (props) => {
     itemDescWrapperRef,
   ]);
 
+  const myLoader = () => {
+    return `${process.env.NEXT_PUBLIC_URL}${src}`;
+  };
+
   return (
     <>
       <ProjectWrapper
@@ -198,8 +203,16 @@ const Project = (props) => {
       >
         <TitlePicture>
           <TextHeader>
-            <Title ref={addToTitleRef}>{title}</Title>
-            <SubTitle ref={addToSubTitleRef}>{baseline}</SubTitle>
+            <Title textColor={props.textColor} ref={addToTitleRef}>
+              {title}
+            </Title>
+            <SubTitle
+              ref={addToSubTitleRef}
+              textColor={props.textColor}
+              textColorNeg={props.textColorNeg}
+            >
+              {baseline}
+            </SubTitle>
           </TextHeader>
           <a
             href={url}
@@ -213,9 +226,10 @@ const Project = (props) => {
               onMouseLeave={onLeaveProjectHanlder}
               onClick={onClickProjectItemHanlder}
             >
-              <img
-                data-speed="auto"
-                src={process.env.NEXT_PUBLIC_STRAPI_URL + src}
+              <Image
+                loader={myLoader}
+                layout="fill"
+                src={`${process.env.NEXT_PUBLIC_URL}${src}`}
                 alt="me"
               />
             </PictureWrapper>
@@ -223,7 +237,9 @@ const Project = (props) => {
         </TitlePicture>
 
         <DescriptionWrapper ref={addToDescwrapperRef}>
-          <p ref={addToDescRef}>{description}</p>
+          <Description ref={addToDescRef} textColorNeg={props.textColorNeg}>
+            {description}
+          </Description>
         </DescriptionWrapper>
       </ProjectWrapper>
     </>
@@ -239,15 +255,18 @@ const TextHeader = styled.div`
   width: calc(${gridColSizes.mobile} * 10);
   margin-left: ${gridColSizes.mobile};
   margin-bottom: ${pxToRem(24)};
+  overflow: hidden;
 
   ${media.tablet} {
-    align-items: flex-end;
-    width: calc(${gridColSizes.tablet} * 6);
+    width: calc(${gridColSizes.tablet} * 8);
+    margin-left: 0;
     margin-top: ${pxToRem(160)};
-    margin-left: unset;
-    margin-bottom: unset;
   }
   ${media.laptop} {
+    overflow: unset;
+    align-items: flex-end;
+    margin-left: unset;
+    margin-bottom: unset;
     width: calc(${gridColSizes.laptop} * 8);
   }
   ${media.desktop} {
@@ -262,10 +281,14 @@ const TextHeader = styled.div`
 
 const Title = styled.h1`
   position: relative;
-  ${ProjectTitleStyle}
-  color: ${colors.White};
+  ${ProjectTitleStyle};
+  color: ${({ theme }) => theme.TextStrong};
   margin-bottom: ${pxToRem(24)};
   padding-bottom: ${pxToRem(24)};
+
+  ${media.laptop} {
+    color: ${(props) => props.textColor};
+  }
 
   &:after {
     position: absolute;
@@ -273,20 +296,29 @@ const Title = styled.h1`
     display: block;
     height: ${pxToRem(1)};
     width: ${pxToRem(400)};
-    background-color: ${colors.White};
+    background-color: ${({ theme }) => theme.TextStrong};
     bottom: 0;
-    right: ${pxToRem(-300)};
+
     z-index: 1;
+
+    ${media.laptop} {
+      background-color: ${colors.White};
+      right: ${pxToRem(-300)};
+    }
   }
 `;
 
 const SubTitle = styled.p`
   ${ParagraphBigStyle};
-  color: ${colors.White};
-  text-align: right;
+  color: ${({ theme }) => theme.Text};
+  ${media.laptop} {
+    text-align: right;
+    color: ${(props) => props.textColor};
+  }
 `;
 
 const PictureWrapper = styled.div`
+  position: relative;
   display: block;
   width: calc(${gridColSizes.mobile} * 9);
   aspect-ratio: 1/1;
@@ -297,13 +329,12 @@ const PictureWrapper = styled.div`
 
   ${media.tablet} {
     width: calc(${gridColSizes.tablet} * 10);
-    margin-left: calc(${gridColSizes.tablet});
+    margin-left: calc(5 * ${gridColSizes.tablet});
   }
   ${media.laptop} {
-    width: calc(${gridColSizes.laptop} * 12);
-    margin-left: calc(${gridColSizes.laptop});
+    width: calc(${gridColSizes.laptop} * 10);
+    margin-left: calc(2 * ${gridColSizes.laptop});
     margin-right: unset;
-    /* margin-right: calc(${gridColSizes.laptop} * 1); */
   }
   ${media.desktop} {
     width: calc(${gridColSizes.desktop} * 11);
@@ -314,7 +345,9 @@ const PictureWrapper = styled.div`
     margin-left: calc(${gridColSizes.desktop});
   }
 
-  ${imgCoverParallax}
+  span {
+    ${imgCoverParallax}
+  }
 `;
 
 const TitlePicture = styled.div`
@@ -323,16 +356,11 @@ const TitlePicture = styled.div`
   align-items: flex-start;
   margin-left: auto;
   margin-right: auto;
-  /* margin-top: ${pxToRem(48)}; */
   margin-top: auto;
   margin-bottom: auto;
 
-  ${media.tablet} {
-    flex-direction: row;
-    /* margin-top: ${pxToRem(160)}; */
-  }
   ${media.laptop} {
-    /* margin-top: ${pxToRem(88)}; */
+    flex-direction: row;
   }
   ${media.desktop} {
   }
@@ -342,7 +370,7 @@ const TitlePicture = styled.div`
 
 const DescriptionWrapper = styled.div`
   display: block;
-  position: absolute;
+  position: relative;
   background-color: ${colors.White};
   width: calc(${gridColSizes.mobile} * 8);
   padding: ${pxToRem(24)};
@@ -352,9 +380,9 @@ const DescriptionWrapper = styled.div`
 
   ${media.tablet} {
     width: calc(${gridColSizes.tablet} * 9);
-    left: calc(${gridColSizes.tablet} * 4);
+    left: calc(${gridColSizes.tablet} * 3);
     padding: ${pxToRem(32)};
-    bottom: 8vh;
+    bottom: 20vh;
   }
   ${media.laptop} {
     width: calc(${gridColSizes.laptop} * 12);
@@ -362,6 +390,7 @@ const DescriptionWrapper = styled.div`
     bottom: 4vh;
   }
   ${media.desktop} {
+    position: absolute;
     width: calc(${gridColSizes.desktop} * 9);
     padding: ${pxToRem(48)};
     left: calc(${gridColSizes.desktop} * 4);
@@ -371,21 +400,32 @@ const DescriptionWrapper = styled.div`
     left: calc(${gridColSizes.max} * 4);
     padding: ${pxToRem(48)};
   }
+`;
 
-  p {
-    ${ParagraphStyle};
-    color: ${colors.Primary};
+const Description = styled.p`
+  ${ParagraphStyle};
+  color: ${(props) => props.textColorNeg};
 
-    ${media.laptop} {
-      ${ParagraphBigStyle};
-    }
+  ${media.laptop} {
+    ${ParagraphBigStyle};
+    color: ${(props) => props.textColorNeg};
   }
 `;
 
 const ProjectWrapper = styled(GridWrapper)`
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  height: 100vh;
-  /* margin-bottom: 50vh; */
+  margin-bottom: ${pxToRem(96)};
+
+  ${media.tablet} {
+    margin-bottom: ${pxToRem(0)};
+  }
+  ${media.laptop} {
+    margin-bottom: unset;
+  }
+  ${media.desktop} {
+    height: 100vh;
+  }
 `;

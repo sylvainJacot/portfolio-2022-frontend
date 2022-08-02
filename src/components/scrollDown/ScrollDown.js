@@ -46,7 +46,7 @@ export default function ScrollDown() {
         onMouseLeave={onLeaveScrollDownHanlder}
         onClick={onClickScrollDownHanlder}
       >
-        <ScrollDownLabel>Discover more projects</ScrollDownLabel>
+        <ScrollDownLabel>Scroll down</ScrollDownLabel>
         <ScrollDownIconWrapper>
           <IcArrow />
         </ScrollDownIconWrapper>
@@ -98,39 +98,32 @@ const ScrollDownIconWrapper = styled.div`
       animation: pulseRing 0.8s linear;
     }
     svg {
-      -webkit-animation: jello-horizontal 0.9s both;
-      animation: jello-horizontal 0.9s both;
+      -webkit-animation: jello-horizontal-bis 0.9s both;
+      animation: jello-horizontal-bis 0.9s both;
     }
   }
 
-  @keyframes jello-horizontal {
+  @keyframes jello-horizontal-bis {
     0% {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
+      transform: scale3d(-1, 1, 1);
     }
     30% {
-      -webkit-transform: scale3d(1.25, 0.75, 1);
-      transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(-1.25, 0.75, 1);
     }
     40% {
-      -webkit-transform: scale3d(0.75, 1.25, 1);
-      transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(-0.75, 1.25, 1);
     }
     50% {
-      -webkit-transform: scale3d(1.15, 0.85, 1);
-      transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(-1.15, 0.85, 1);
     }
     65% {
-      -webkit-transform: scale3d(0.95, 1.05, 1);
-      transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(-0.95, 1.05, 1);
     }
     75% {
-      -webkit-transform: scale3d(1.05, 0.95, 1);
-      transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(-1.05, 0.95, 1);
     }
     100% {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
+      transform: scale3d(-1, 1, 1);
     }
   }
   @keyframes pulseRing {
@@ -155,16 +148,20 @@ const ScrollDownIconWrapper = styled.div`
 const ScrollDownWrapper = styled.a`
   position: relative;
   margin: 0 auto;
+  margin-top: ${pxToRem(40)};
   display: flex;
   align-items: center;
+  justify-content: center;
 
   ${media.tablet} {
-    position: absolute;
-    top: 90vh;
+    margin-top: unset;
+    justify-content: unset;
     left: calc(${gridMargins.tablet} + ${gridColSizes.tablet});
   }
   ${media.laptop} {
-    width: 100%;
+    position: absolute;
+    top: 90vh;
+    width: auto;
     left: calc(${gridMargins.laptop} + ${gridColSizes.laptop});
   }
   ${media.desktop} {
@@ -180,8 +177,8 @@ const ScrollDownWrapper = styled.a`
         animation: pulseRing 0.8s linear;
       }
       svg {
-        -webkit-animation: jello-horizontal 0.9s both;
-        animation: jello-horizontal 0.9s both;
+        -webkit-animation: jello-horizontal-bis 0.9s both;
+        animation: jello-horizontal-bis 0.9s both;
       }
     }
   }

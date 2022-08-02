@@ -16,6 +16,8 @@ export default function Projects(props) {
               src={project.attributes.MainPicture.data.attributes.url}
               mainColor={bgColor}
               url={project.attributes.URL}
+              textColor={project.attributes.TextColor}
+              textColorNeg={project.attributes.TextColorNeg}
             />
           );
         })}

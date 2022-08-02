@@ -15,7 +15,7 @@ export const lightGoogleMap = [
     elementType: "all",
     stylers: [
       {
-        color: colors.Tertiary,
+        color: "#f2f2f2",
       },
     ],
   },
@@ -31,7 +31,14 @@ export const lightGoogleMap = [
   {
     featureType: "road",
     elementType: "all",
-    stylers: [{ color: colors.Primary }],
+    stylers: [
+      {
+        saturation: -100,
+      },
+      {
+        lightness: 45,
+      },
+    ],
   },
   {
     featureType: "road.highway",
@@ -65,10 +72,19 @@ export const lightGoogleMap = [
     elementType: "all",
     stylers: [
       {
-        color: colors.Aqua,
+        color: "#000000",
       },
       {
         visibility: "on",
+      },
+    ],
+  },
+  {
+    featureType: "water",
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        color: "#0D192B",
       },
     ],
   },

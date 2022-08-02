@@ -137,9 +137,12 @@ const SocialsWrapper = styled.ul`
   transform: ${(props) => (props.socialsState ? "scaley(1)" : "scaley(0)")};
 
   ${media.laptop} {
-    padding: ${pxToRem(24)} ${pxToRem(32)};
+    padding: ${pxToRem(16)} ${pxToRem(16)};
     flex-direction: column;
     align-items: flex-start;
+  }
+  ${media.desktop} {
+    padding: ${pxToRem(24)} ${pxToRem(32)};
   }
 `;
 
@@ -197,16 +200,16 @@ const Social = styled.li`
   &:hover {
     a {
       color: ${({ theme }) => theme.TextStrong};
-      transition: all ${transitionDefault};
+      transition: all 0.3s linear;
 
       ${SocialIcon} {
         border: solid ${pxToRem(1)} transparent;
-        transition: all ${transitionDefault};
+        transition: all 0.3s linear;
         svg {
-          animation: button_social-bounce 1s linear;
+          animation: button_social-bounce 0.3s linear;
           path {
             fill: ${({ theme }) => theme.TextStrong};
-            transition: all ${transitionDefault};
+            transition: all 0.3s linear;
           }
         }
       }

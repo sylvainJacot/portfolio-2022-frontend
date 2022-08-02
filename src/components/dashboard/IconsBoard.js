@@ -44,12 +44,19 @@ const IconsBoardWrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  width: ${pxToRem(40)};
-  height: ${pxToRem(40)};
+  width: ${pxToRem(48)};
+  height: ${pxToRem(48)};
   border: ${pxToRem(1)} solid ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.textNeg};
+  overflow: hidden;
   border-radius: 50%;
   &:not(:last-child) {
     margin-right: ${pxToRem(8)};
+  }
+
+  ${media.laptop} {
+    width: ${pxToRem(40)};
+    height: ${pxToRem(40)};
   }
 
   & > button {

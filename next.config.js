@@ -1,18 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-const { i18n } = require("./next-i18next.config");
-
 const nextConfig = {
-  i18n,
   reactStrictMode: true,
 };
 
 module.exports = {
+  reactStrictMode: true,
   images: {
-    domains: ["localhost"],
-  },
-  env: {
-    NEXT_PUBLIC_STRAPI_URL: process.env.NEXT_PUBLIC_STRAPI_URL,
+    domains: ["localhost:3000", "localhost"],
   },
   compiler: {
     // ssr and displayName are configured by default

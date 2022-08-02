@@ -83,7 +83,6 @@ const SunBeam = styled.span`
   width: ${pxToRem(24)};
   height: ${pxToRem(24)};
   transform-origin: center center;
-  /* transition: all 0.2s linear; */
   animation: ${(props) =>
     props.active
       ? css`
@@ -131,7 +130,6 @@ const SunBeam = styled.span`
 
 const Button = styled.button`
   position: relative;
-  background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
   border-radius: 30px;
   cursor: pointer;
@@ -139,7 +137,7 @@ const Button = styled.button`
   transform: ${(props) =>
     props.active ? "rotate(-45deg) " : "rotate(45deg) "};
   transition: all 0.2s linear;
-
+  background-color: ${({ theme }) => theme.textNeg};
   svg {
     transform: ${(props) => (props.active ? "scale(1)" : "scale(0.6)")};
     transition: all 0.2s linear;

@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { MouseContext } from "../../context/mouse-context";
 import { transitionDefault } from "../animations/transitions";
 import { InterTitleStyle } from "../primitives/typography";
+import media from "../layout/Mediaqueries";
 
 export default function Cursor() {
   const { x, y } = useMousePosition();
@@ -102,6 +103,10 @@ const CursorMain = styled.div`
   mix-blend-mode: difference;
   transform: translate(-50%, -50%) scale(1);
   ${({ hover }) => handleCursorHover(hover)};
+  display: none;
+  ${media.laptop} {
+    display: block;
+  }
 `;
 
 const CursorProject = styled.div`
