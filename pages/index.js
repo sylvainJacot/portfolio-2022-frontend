@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import GlobalStyle from "../src/components/layout/GlobalStyle";
 import GridHelper from "../src/components/layout/gridHelper";
 import Projects from "../src/components/sections/Projects";
@@ -49,8 +50,29 @@ export default function Home({ loaderQuery, factQuery }) {
         <ThemeProvider theme={themeMode}>
           <GlobalStyle />
           <GridHelper />
+
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+
+          <Script strategy="lazyOnload">
+            {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                  page_path: window.location.pathname,
+                  });
+              `}
+          </Script>
+
           <Head>
-            <title>Portfolio 2022</title>
+            <title>Jacot Sylvain</title>
+            <meta
+              name="viewport"
+              content="initial-scale=1, width=device-width"
+            />
             <meta
               name="description"
               content="Portfolio Jacot Sylvain Frontend developer"
