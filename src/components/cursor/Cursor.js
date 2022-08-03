@@ -111,7 +111,6 @@ const CursorMain = styled.div`
 
 const CursorProject = styled.div`
   position: fixed;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: ${pxToRem(120)};
@@ -136,7 +135,7 @@ const CursorProject = styled.div`
   }
   display: none;
   ${media.laptop} {
-    display: block;
+    display: flex;
   }
 `;
 
