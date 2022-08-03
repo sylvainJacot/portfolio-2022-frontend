@@ -26,7 +26,7 @@ const Project = (props) => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const { bodyColor, bodyColorChangeHandler } = useContext(BodyContext);
 
-  const { title, description, src, mainColor, baseline, url } = props;
+  const { title, description, src, mainColor, baseline, url, alt } = props;
 
   const { overallSound, overallSoundChangeHandler } =
     useContext(OverallSoundContext);
@@ -164,7 +164,7 @@ const Project = (props) => {
               scaleY: 0,
               ease: Power2,
             },
-            "-=0.3"
+            "-=0.6"
           );
           timeLineProject.from(
             itemDescRef.current,
@@ -230,7 +230,7 @@ const Project = (props) => {
                 loader={myLoader}
                 layout="fill"
                 src={`${process.env.NEXT_PUBLIC_URL}${src}`}
-                alt="me"
+                alt={alt}
               />
             </PictureWrapper>
           </a>

@@ -20,7 +20,7 @@ const Text = styled.p`
   opacity: ${(props) => (props.thankYouState ? "1" : "0")};
   transform: ${(props) =>
     props.thankYouState ? "translateY(0)" : "translateY(-160px)"};
-  transition: all 2s ease-out;
+  transition: all 1s ease-out;
 
   strong {
     ${Heading01Style}

@@ -2,6 +2,7 @@
 const OgongoThumb = "/img/projectOgongo.png";
 const NCThumb = "/img/projectNC.png";
 const PoolfinoThumb = "/img/projectPoolfino.png";
+const FebecoopThumb = "/img/projectFebeccop.png";
 
 export const projectsData = {
   data: [
@@ -20,9 +21,9 @@ export const projectsData = {
           data: {
             id: 3,
             attributes: {
-              name: "Screenshot 2022-07-25 at 19.41.52.png",
-              alternativeText: "Screenshot 2022-07-25 at 19.41.52.png",
-              url: OgongoThumb,
+              name: "Febecoop website thumbnail",
+              alternativeText: "Febecoop website thumbnail",
+              url: FebecoopThumb,
             },
           },
         },
@@ -35,16 +36,17 @@ export const projectsData = {
         Description:
           "Ogongo sell a bike to conquer the urban jungle with style and forget the traffic jam. Speed and lightness, everything becomes possible.",
         MainColor: "#161617",
-        Baseline: "Test de la baseline",
-        URL: "https://www.google.com/",
+        Baseline:
+          "Electric bikes to create your own fun and comfortable riding",
+        URL: "https://www.ogongo.com/",
         TextColor: "white",
         TextColorNeg: "#161617",
         MainPicture: {
           data: {
             id: 3,
             attributes: {
-              name: "Screenshot 2022-07-25 at 19.41.52.png",
-              alternativeText: "Screenshot 2022-07-25 at 19.41.52.png",
+              name: "Ogongo website thumbnail",
+              alternativeText: "Ogongo website thumbnail",
               url: OgongoThumb,
             },
           },
@@ -56,9 +58,9 @@ export const projectsData = {
       attributes: {
         Title: "Nemec+Chvatal",
         Description:
-          "Ogongo sell a bike to conquer the urban jungle with style and forget the traffic jam. Speed and lightness, everything becomes possible.",
+          "Nemec+Chvatal is an independent public affairs consultancy situated in the heart of the Brussels EU district.",
         MainColor: "#0e1c34",
-        Baseline: "Test de la baseline",
+        Baseline: "Steering your business through a changing world",
         URL: "https://www.nemecchvatal.com/",
         TextColor: "white",
         TextColorNeg: "#0e1c34",
@@ -66,36 +68,36 @@ export const projectsData = {
           data: {
             id: 3,
             attributes: {
-              name: "Screenshot 2022-07-25 at 19.41.52.png",
-              alternativeText: "Screenshot 2022-07-25 at 19.41.52.png",
+              name: "Nemec+Chvatal website thumbnail",
+              alternativeText: "Nemec+Chvatal website thumbnail",
               url: NCThumb,
             },
           },
         },
       },
     },
-    {
-      id: 6,
-      attributes: {
-        Title: "Poolfino",
-        Description:
-          "Ogongo sell a bike to conquer the urban jungle with style and forget the traffic jam. Speed and lightness, everything becomes possible.",
-        MainColor: "#FFF7F2",
-        Baseline: "Test de la baseline",
-        URL: "https://www.nemecchvatal.com/",
-        TextColor: "#235897",
-        TextColorNeg: "#235897",
-        MainPicture: {
-          data: {
-            id: 3,
-            attributes: {
-              name: "Screenshot 2022-07-25 at 19.41.52.png",
-              alternativeText: "Screenshot 2022-07-25 at 19.41.52.png",
-              url: PoolfinoThumb,
-            },
-          },
-        },
-      },
-    },
+    // {
+    //   id: 6,
+    //   attributes: {
+    //     Title: "Poolfino",
+    //     Description:
+    //       "Ogongo sell a bike to conquer the urban jungle with style and forget the traffic jam. Speed and lightness, everything becomes possible.",
+    //     MainColor: "#FFF7F2",
+    //     Baseline: "Test de la baseline",
+    //     URL: "https://www.nemecchvatal.com/",
+    //     TextColor: "#235897",
+    //     TextColorNeg: "#235897",
+    //     MainPicture: {
+    //       data: {
+    //         id: 3,
+    //         attributes: {
+    //           name: "Screenshot 2022-07-25 at 19.41.52.png",
+    //           alternativeText: "Screenshot 2022-07-25 at 19.41.52.png",
+    //           url: PoolfinoThumb,
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
   ],
 };

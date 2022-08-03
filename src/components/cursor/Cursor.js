@@ -134,6 +134,10 @@ const CursorProject = styled.div`
       transform: translate(-50%, -50%) scale(1);
     }
   }
+  display: none;
+  ${media.laptop} {
+    display: block;
+  }
 `;
 
 const CursorTrail = styled.div`
@@ -148,6 +152,10 @@ const CursorTrail = styled.div`
   will-change: width, height, transform, border;
   z-index: 999;
   pointer-events: none;
+  display: none;
+  ${media.laptop} {
+    display: block;
+  }
 
   @keyframes pulse {
     0% {

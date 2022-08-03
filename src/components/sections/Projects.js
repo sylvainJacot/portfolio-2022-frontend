@@ -14,6 +14,9 @@ export default function Projects(props) {
               description={project.attributes.Description}
               baseline={project.attributes.Baseline}
               src={project.attributes.MainPicture.data.attributes.url}
+              alt={
+                project.attributes.MainPicture.data.attributes.alternativeText
+              }
               mainColor={bgColor}
               url={project.attributes.URL}
               textColor={project.attributes.TextColor}
