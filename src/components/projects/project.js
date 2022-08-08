@@ -231,6 +231,8 @@ const Project = (props) => {
                 layout="fill"
                 src={`${process.env.NEXT_PUBLIC_URL}${src}`}
                 alt={alt}
+                blurDataURL={`${process.env.NEXT_PUBLIC_URL}${src}`}
+                placeholder="blur"
               />
             </PictureWrapper>
           </a>

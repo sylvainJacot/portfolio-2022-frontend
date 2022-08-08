@@ -15,7 +15,7 @@ export const lightGoogleMap = [
     elementType: "all",
     stylers: [
       {
-        color: "#f2f2f2",
+        color: "#F2F3FC",
       },
     ],
   },

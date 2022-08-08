@@ -29,7 +29,7 @@ const MiniMap = React.memo((props) => {
 
   return (
     <>
-      <Map ref={googlemap} mapState={props.mapState} />
+      <Map ref={googlemap} loading="lazy" mapState={props.mapState} />
     </>
   );
 });
