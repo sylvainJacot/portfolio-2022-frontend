@@ -41,7 +41,7 @@ export default function Home({ loaderQuery, factQuery }) {
   };
 
   useEffect(() => {
-    console.clear();
+    // console.clear();
   }, []);
 
   return (

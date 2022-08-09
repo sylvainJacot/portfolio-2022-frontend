@@ -12,9 +12,8 @@ export default function BackgroundOverlay() {
   return (
     <>
       <LinearGradient />
-      <BackgroundOverlayContainer
-        bodyColor={bodyColor}
-      ></BackgroundOverlayContainer>
+      <BackgroundColorProject bodyColor={bodyColor} />
+      <BackgroundOverlayContainer />
     </>
   );
 }
@@ -22,9 +21,9 @@ export default function BackgroundOverlay() {
 const BackgroundOverlayContainer = styled.div`
   position: fixed;
   inset: 0;
-  background: ${(props) => props.bodyColor};
+  background: ${({ theme }) => theme.body};
   pointer-events: none;
-  z-index: -1;
+  z-index: -2;
   transition: all ${transitionDefault};
 
   &:after {
@@ -69,6 +68,15 @@ const BackgroundOverlayContainer = styled.div`
       width: calc(13 * ${gridColSizes.max} + calc(${gridColSizes.max} / 2));
     }
   }
+`;
+
+const BackgroundColorProject = styled.div`
+  position: fixed;
+  inset: 0;
+  background: ${(props) => props.bodyColor};
+  pointer-events: none;
+  z-index: -1;
+  transition: all ${transitionDefault};
 `;
 
 const LinearGradient = styled.div`

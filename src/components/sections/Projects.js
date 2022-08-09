@@ -21,6 +21,7 @@ export default function Projects(props) {
               url={project.attributes.URL}
               textColor={project.attributes.TextColor}
               textColorNeg={project.attributes.TextColorNeg}
+              theme={props.theme}
             />
           );
         })}

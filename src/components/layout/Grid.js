@@ -51,9 +51,5 @@ export const GridWrapper = styled.div`
 `;
 
 export default function Grid(props) {
-  return (
-    <>
-      <GridWrapper>{props.children}</GridWrapper>
-    </>
-  );
+  return <GridWrapper>{props.children}</GridWrapper>;
 }
