@@ -13,7 +13,9 @@ const OverallSoundContextProvider = (props) => {
   };
 
   return (
-    <OverallSoundContext.Provider value={value}>
+    <OverallSoundContext.Provider
+      value={{ overallSound, overallSoundChangeHandler }}
+    >
       {props.children}
     </OverallSoundContext.Provider>
   );
