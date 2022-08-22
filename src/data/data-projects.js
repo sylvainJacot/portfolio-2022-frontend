@@ -7,30 +7,31 @@ const FebecoopThumb = "/img/projectFebeccop.png";
 export const projectsData = {
   data: [
     {
-      id: 4,
+      id: 1,
       attributes: {
-        Title: "Febecoop",
+        Title: "Bluefino",
         Description:
-          "Febecoop est une plateforme intersectorielle d’entreprises et d’associations qui partagent la volonté de développer une économie respectueuse de l’homme et de son environnement, axée sur l’utilité et l’équité sociales, au moyen d’entreprises organisées sur base des valeurs, de l’éthique et des principes coopératifs.",
-        MainColor: "#efedf3",
-        Baseline: "Febecoop defend, promeut et accompagne les coopératives",
-        URL: "https://febecoop.be/",
-        TextColor: "#19005a",
-        TextColorNeg: "#19005a",
+          "At Bluefino, they are changing the way they are thinking about pool design by making it easier for people to realize their dreams. Their pools are solid, quick to install, modular and ready to use",
+        MainColor: "#FFF7F2",
+        Baseline:
+          "Swimming pool providers, creator of well-being for more than 50 years",
+        URL: "https://www.bluefino.be/",
+        TextColor: "#235897",
+        TextColorNeg: "#235897",
         MainPicture: {
           data: {
             id: 3,
             attributes: {
-              name: "Febecoop website thumbnail",
-              alternativeText: "Febecoop website thumbnail",
-              url: FebecoopThumb,
+              name: "Bluefino website thumbnail",
+              alternativeText: "Bluefino website thumbnail",
+              url: PoolfinoThumb,
             },
           },
         },
       },
     },
     {
-      id: 6,
+      id: 2,
       attributes: {
         Title: "Ogongo",
         Description:
@@ -48,6 +49,29 @@ export const projectsData = {
               name: "Ogongo website thumbnail",
               alternativeText: "Ogongo website thumbnail",
               url: OgongoThumb,
+            },
+          },
+        },
+      },
+    },
+    {
+      id: 4,
+      attributes: {
+        Title: "Febecoop",
+        Description:
+          "Febecoop is an intersectoral platform of companies and associations which shares the will to develop an economy respectful of man and his environment, activated on utility and social equity, by means of companies organized on the basis of values, ethics and cooperative principles.",
+        MainColor: "#efedf3",
+        Baseline: "Febecoop defends, promotes and supports cooperatives",
+        URL: "https://febecoop.be/",
+        TextColor: "#19005a",
+        TextColorNeg: "#19005a",
+        MainPicture: {
+          data: {
+            id: 3,
+            attributes: {
+              name: "Febecoop website thumbnail",
+              alternativeText: "Febecoop website thumbnail",
+              url: FebecoopThumb,
             },
           },
         },
@@ -76,28 +100,5 @@ export const projectsData = {
         },
       },
     },
-    // {
-    //   id: 6,
-    //   attributes: {
-    //     Title: "Poolfino",
-    //     Description:
-    //       "Ogongo sell a bike to conquer the urban jungle with style and forget the traffic jam. Speed and lightness, everything becomes possible.",
-    //     MainColor: "#FFF7F2",
-    //     Baseline: "Test de la baseline",
-    //     URL: "https://www.nemecchvatal.com/",
-    //     TextColor: "#235897",
-    //     TextColorNeg: "#235897",
-    //     MainPicture: {
-    //       data: {
-    //         id: 3,
-    //         attributes: {
-    //           name: "Screenshot 2022-07-25 at 19.41.52.png",
-    //           alternativeText: "Screenshot 2022-07-25 at 19.41.52.png",
-    //           url: PoolfinoThumb,
-    //         },
-    //       },
-    //     },
-    //   },
-    // },
   ],
 };
