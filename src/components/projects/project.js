@@ -24,12 +24,14 @@ const Project = (props) => {
     itemDescRef,
     itemDescWrapperRef,
     itemSubtitleRef,
+    itemMadeAtRef,
     addToDescwrapperRef,
     addToSubTitleRef,
     addToDescRef,
     addToTitleRef,
     addToPicRef,
     addToMainItemRef,
+    addToMadeAtRef,
   } = useProjectRefs();
   const {
     title,
@@ -120,6 +122,15 @@ const Project = (props) => {
         "-=0.3"
       );
       timeLineProject.from(
+        itemMadeAtRef.current,
+        {
+          opacity: 0,
+          x: 32,
+          ease: Power2,
+        },
+        "-=0.3"
+      );
+      timeLineProject.from(
         itemDescWrapperRef.current,
         {
           scaleY: 0,
@@ -160,6 +171,7 @@ const Project = (props) => {
     itemDescRef,
     itemSubtitleRef,
     itemDescWrapperRef,
+    itemMadeAtRef,
   ]);
 
   const myLoader = () => {
@@ -175,6 +187,7 @@ const Project = (props) => {
       >
         <ProjectNodes
           addToTitleRef={addToTitleRef}
+          addToMadeAtRef={addToMadeAtRef}
           title={title}
           addToSubTitleRef={addToSubTitleRef}
           textColor={textColor}

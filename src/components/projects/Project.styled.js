@@ -6,11 +6,13 @@ import { gridColSizes, GridWrapper } from "../layout/Grid";
 import { imgCoverParallax } from "../../lib/functions/imgCover";
 import {
   ParagraphBigStyle,
+  ParagraphSmallStyle,
   ParagraphStyle,
   ProjectTitleStyle,
 } from "../primitives/typography";
 import { pxToRem } from "../../lib/functions/pxToRem";
 import media from "../layout/Mediaqueries";
+import { transitionDefault } from "../animations/transitions";
 
 export const TextHeader = styled.div`
   display: flex;
@@ -76,6 +78,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.p`
   ${ParagraphBigStyle};
   color: ${({ theme }) => theme.Text};
+  margin-bottom: ${pxToRem(24)};
   ${media.laptop} {
     text-align: right;
     color: ${(props) => props.textColor};
@@ -169,7 +172,7 @@ export const DescriptionWrapper = styled.div`
 
 export const Description = styled.p`
   ${ParagraphStyle};
-  color: ${(props) => props.textColorNeg};
+  color: ${colors.Primary};
 
   ${media.laptop} {
     ${ParagraphBigStyle};
@@ -195,4 +198,26 @@ export const ProjectWrapper = styled(GridWrapper)`
   }
 `;
 
-media;
+export const MadeAt = styled.p`
+  ${ParagraphSmallStyle}
+  color: ${colors.White};
+  a {
+    color: ${colors.White};
+  }
+
+  ${media.laptop} {
+    color: ${(props) => props.textColor};
+    a {
+      display: inline-block;
+      color: ${(props) => props.textColor};
+      transform: translateY(0px);
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        ${transitionDefault};
+        transform: translateY(-3px);
+        transition: all 0.3s ease-out;
+      }
+    }
+  }
+`;

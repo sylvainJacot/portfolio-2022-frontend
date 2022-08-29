@@ -49,3 +49,8 @@ export const ParagraphStyle = css`
   font-family: ${fontsFamilies.oldStandardRegular};
   font-size: ${pxToRem(18)};
 `;
+
+export const ParagraphSmallStyle = css`
+  font-family: ${fontsFamilies.bebasNeueRegular};
+  font-size: ${pxToRem(14)};
+`;

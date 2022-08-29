@@ -2,6 +2,7 @@ import React from "react";
 import {
   Description,
   DescriptionWrapper,
+  MadeAt,
   PictureWrapper,
   SubTitle,
   TextHeader,
@@ -9,7 +10,6 @@ import {
   TitlePicture,
 } from "./Project.styled";
 import Image from "next/image";
-
 export default function ProjectNodes(props) {
   return (
     <>
@@ -25,6 +25,16 @@ export default function ProjectNodes(props) {
           >
             {props.baseline}
           </SubTitle>
+          <MadeAt textColor={props.textColor} ref={props.addToMadeAtRef}>
+            Made at{" "}
+            <a
+              href="https://atelierdesign.be/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Atelier Design
+            </a>
+          </MadeAt>
         </TextHeader>
         <a
           href={props.url}

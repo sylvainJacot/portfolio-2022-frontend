@@ -21,6 +21,9 @@ export const useProjectRefs = () => {
   const itemSubtitleRef = useRef([]);
   itemSubtitleRef.current = [];
 
+  const itemMadeAtRef = useRef([]);
+  itemMadeAtRef.current = [];
+
   const addToMainItemRef = (mainRef) => {
     if (mainRef) {
       itemMainRef.current.push(mainRef);
@@ -56,6 +59,12 @@ export const useProjectRefs = () => {
     }
   };
 
+  const addToMadeAtRef = (madeAtRef) => {
+    if (madeAtRef) {
+      itemMadeAtRef.current.push(madeAtRef);
+    }
+  };
+
   return {
     itemMainRef,
     itemPicRef,
@@ -63,11 +72,13 @@ export const useProjectRefs = () => {
     itemDescRef,
     itemDescWrapperRef,
     itemSubtitleRef,
+    itemMadeAtRef,
     addToDescwrapperRef,
     addToSubTitleRef,
     addToDescRef,
     addToTitleRef,
     addToPicRef,
     addToMainItemRef,
+    addToMadeAtRef,
   };
 };
