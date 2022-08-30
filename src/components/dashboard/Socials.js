@@ -202,8 +202,8 @@ const Social = styled.li`
       transition: all 0.3s linear;
 
       ${SocialIcon} {
-        border: solid ${pxToRem(1)} transparent;
-        transition: all 0.3s linear;
+        /* border: solid ${pxToRem(1)} transparent;
+        transition: all 0.3s linear; */
         svg {
           animation: button_social-bounce 0.3s linear;
           path {
