@@ -199,7 +199,6 @@ const Social = styled.li`
 
   &:hover {
     a {
-      color: ${({ theme }) => theme.TextStrong};
       transition: all 0.3s linear;
 
       ${SocialIcon} {
@@ -208,7 +207,6 @@ const Social = styled.li`
         svg {
           animation: button_social-bounce 0.3s linear;
           path {
-            fill: ${({ theme }) => theme.TextStrong};
             transition: all 0.3s linear;
           }
         }

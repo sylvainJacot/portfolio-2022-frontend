@@ -53,8 +53,6 @@ const DateItem = styled(Moment)`
     props.$datetimestate
       ? "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
       : "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);"};
-  transition: all ${transitionDefault};
-  transition-delay: 0.3s;
   z-index: 1;
 `;
 
@@ -65,7 +63,7 @@ const Time = styled(Moment)`
     props.$datetimestate
       ? "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
       : "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);"};
-  transition: all ${transitionDefault};
-  transition-delay: 0.5s;
+  /* transition: all ${transitionDefault};
+  transition-delay: 0.5s; */
   z-index: 1;
 `;
