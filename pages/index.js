@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
+import { Html } from "next/document";
 import GlobalStyle from "../src/components/layout/GlobalStyle";
 import GridHelper from "../src/components/layout/gridHelper";
 import Projects from "../src/components/sections/Projects";
@@ -84,7 +85,7 @@ export default function Home({ loaderQuery, factQuery }) {
             <link
               rel="preconnect"
               href="https://fonts.gstatic.com"
-              crossOrigin="true"
+              crossOrigin={true}
             />
             <link
               href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
