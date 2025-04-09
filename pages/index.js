@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Script from "next/script";
-import { Html } from "next/document";
 import GlobalStyle from "../src/components/layout/GlobalStyle";
 import GridHelper from "../src/components/layout/gridHelper";
 import Projects from "../src/components/sections/Projects";
